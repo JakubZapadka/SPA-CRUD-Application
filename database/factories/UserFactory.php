@@ -24,6 +24,7 @@ class UserFactory extends Factory
             'password' => Hash::make('password'),
             'role' => fake()->randomElement(['user', 'admin']),
             'remember_token' => Str::random(10),
+            'email_verified_at' => now(),
         ];
     }
 }

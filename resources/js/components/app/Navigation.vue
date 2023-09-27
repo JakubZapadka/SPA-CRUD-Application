@@ -12,10 +12,10 @@
             <CreateNewDropdown />
 
             <div class="py-3">
-                <NavLink href="/">My Profile</NavLink>
-                <NavLink href="/">Entries</NavLink>
-                <NavLink href="/">Users</NavLink>
-                <NavLink href="/" :active="true">Logout</NavLink>
+                <NavLink :href="route('profile.edit')" :active="$page.url === '/profile'">My Profile</NavLink>
+                <NavLink :href="route('dashboard')" :active="$page.url === '/entries'">Entries</NavLink>
+                <NavLink :href="route('dashboard')" :active="$page.url === '/users'">Users</NavLink>
+                <NavLink :href="route('logout')" method="post" as="button">Logout</NavLink>
             </div>
         </div>
     </nav>
@@ -25,7 +25,6 @@ import ApplicationLogo from '@/components/ApplicationLogo.vue';
 import { Link } from '@inertiajs/vue3';
 import CreateNewDropdown from '@/components/app/CreateNewDropdown.vue';
 import NavLink from '@/components/NavLink.vue';
-
 </script>
 <style scoped>
 </style>
