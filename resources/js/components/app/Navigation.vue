@@ -13,7 +13,7 @@
 
             <div class="py-3">
                 <NavLink :href="route('profile.edit')" :active="$page.url === '/profile'">My Profile</NavLink>
-                <NavLink :href="route('entries.edit')" :active="$page.url === '/entries'">Entries</NavLink>
+                <NavLink :href="route('entries.index')" :active="$page.url === '/entries'">Entries</NavLink>
                 <NavLink :href="route('dashboard')" :active="$page.url === '/users'">Users</NavLink>
                 <NavLink :href="route('logout')" method="post" as="button">Logout</NavLink>
             </div>
