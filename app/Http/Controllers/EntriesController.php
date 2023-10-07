@@ -12,7 +12,8 @@ class EntriesController extends Controller
 {
     public function index(): Response
     {
-        return Inertia::render('Entries/Index');
+        $entries = Entry::all(); // Fetch all entries from the database
+        return Inertia::render('Entries/Index', ['entries' => $entries]);
     }
 
     public function store(EntriesStoreRequest $request)
