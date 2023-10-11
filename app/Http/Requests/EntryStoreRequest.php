@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Entry;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class EntriesStoreRequest extends FormRequest
+class EntryStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +24,8 @@ class EntriesStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|unique:entries',
-            'content' => 'required',
+            'title' => ['string','required', 'max:255'],
+            'content' => ['string', 'required', 'max:1023'],
         ];
     }
 }

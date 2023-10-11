@@ -32,7 +32,7 @@
                     <div class="flex justify-between items-center">
                         <!-- reset -->
                         <div class="w-1/3">
-                            <button type="reset" @click="showForm = !showForm" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 w-full">Close</button>
+                            <button type="reset" @click="showForm = !showForm" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 w-full">Exit</button>
                         </div>
                             <!-- submit -->
                         <div class="flex justify-end w-1/2 items-center gap-2">
@@ -59,7 +59,7 @@ import { useForm } from '@inertiajs/vue3'
 import InputLabel from '@/Components/InputLabel.vue';
 import InputError from '@/Components/InputError.vue';
 import TextInput from '@/Components/TextInput.vue';
-import TextArea from '@/components/TextArea.vue';
+import TextArea from '@/Components/TextArea.vue';
 
 const showForm = ref(false)
 const titleInput = ref(null);
@@ -71,7 +71,7 @@ const form = useForm({
 })
 
 const storeNewEntry = () => {
-    form.put(route('entries.store'), {
+    form.post(route('entries.store'), {
         preserveScroll: true,
         onSuccess: () => form.reset(),
         onError: () => {

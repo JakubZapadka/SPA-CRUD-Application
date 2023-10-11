@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\EntriesController;
+use App\Http\Controllers\EntryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -34,9 +34,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/entries', [EntriesController::class, 'index'])->name('entries.index');
-    Route::put('/entries', [EntriesController::class, 'store'])->name('entries.store');
-    Route::post('/entries', [EntriesController::class, 'show'])->name('entries.show');
+    Route::get('/entries', [EntryController::class, 'index'])->name('entries.index');
+    Route::post('/entries', [EntryController::class, 'store'])->name('entries.store');
+    Route::put('/entries/{entry}', [EntryController::class, 'update'])->name('entries.update');
 });
 
 require __DIR__.'/auth.php';
