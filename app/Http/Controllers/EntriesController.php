@@ -12,8 +12,9 @@ class EntriesController extends Controller
 {
     public function index(): Response
     {
-        $entries = Entry::all(); // Fetch all entries from the database
-        return Inertia::render('Entries/Index', ['entries' => $entries]);
+        #$entries = Entry::all(); // Fetch all entries from the database
+        #return Inertia::render('Entries/Index', ['entries' => $entries]);
+        return Inertia::render('Entries/Index');
     }
 
     public function store(EntriesStoreRequest $request)
@@ -22,5 +23,12 @@ class EntriesController extends Controller
         sleep(1);
 
         return to_route('entries.index');
+    }
+
+    public function show()
+    {
+        $entries = Entry::all();
+        //return Inertia::render('Entries/Index', ['entries' => $entries]);
+        return inertia('Entries/show', ['entries' => $entries]);
     }
 }

@@ -29,7 +29,7 @@
                     {{ entry.content }}
                 </td>
                 <td class="px-6 py-4 text-right">
-                    <EditEntryForm />
+                    <!--<EditEntryForm />-->
                 </td>
             </tr>
         </tbody>
@@ -41,10 +41,12 @@
 import { ref } from 'vue'
 import EditEntryForm from './EditEntryForm.vue';
 
-export default {
+
+
+export default{
     props: {
         entries: {
-            type: Array
+            type: Object
         }
     },
     components: { EditEntryForm }
