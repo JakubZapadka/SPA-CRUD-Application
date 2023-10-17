@@ -2,7 +2,7 @@
     <div>
         <button @click="showForm = !showForm" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
         <div v-if="showForm" class="fixed inset-0 flex items-center justify-center bg-black/25">
-            <div class="bg-white p-4 rounded-lg sm:w-1/2 w-5/6">
+            <div class="bg-white p-4 rounded-lg sm:max-w-xl w-5/6">
                 <form @submit.prevent="editForm" class="flex flex-col gap-4">
                     <!-- title -->
                     <div class="text-left">
